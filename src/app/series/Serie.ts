@@ -2,7 +2,7 @@ export class Serie {
     id: number 
     title: string
     platform: string
-    seasons: number
+    season: number
     description: string
     link: string
     image: string
@@ -11,7 +11,7 @@ export class Serie {
         this.id = id
         this.title = title
         this.platform = platform
-        this.seasons = seasons
+        this.season = seasons
         this.description = description
         this.link = link
         this.image = image
