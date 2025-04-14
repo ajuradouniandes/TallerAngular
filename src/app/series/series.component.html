@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="h5">Id</th>
+          <th class="h4">Title</th>
+          <th class="h4">Platform</th>
+          <th class="h4">Seasons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let series of series">
+          <td>{{ series.id }}</td>
+          <td>{{ series.title }}</td>
+          <td>{{ series.platform }}</td>
+          <td>{{ series.seasons }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
