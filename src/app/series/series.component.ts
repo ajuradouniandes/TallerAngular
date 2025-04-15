@@ -12,13 +12,22 @@ import { SeriesService } from './series.service';
 export class SeriesComponent implements OnInit {
 
   series: Array<Serie> = [];
+  avaregeSeasons: number = 0;
   constructor(private SeriesService: SeriesService ) { }
   
-  getSeries() {
-      this.SeriesService.getSeries().subscribe((data: Array<Serie>) => {
+  async getSeries() {
+      await this.SeriesService.getSeries().subscribe((data: Array<Serie>) => {
         this.series = data;
+        this.getAvaregeSeasons();
       }
     );
+  }
+
+  getAvaregeSeasons() {
+    for (let serie of this.series) {
+      this.avaregeSeasons += serie.season;
+    }
+    this.avaregeSeasons = this.avaregeSeasons / this.series.length;
   }
 
   ngOnInit() {
